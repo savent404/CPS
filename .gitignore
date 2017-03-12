@@ -31,3 +31,19 @@
 # Debug files
 *.dSYM/
 *.su
+
+# MDK files
+*.log
+*.scvd
+*.crf
+*.d
+*.sct
+*.axf
+*.Scr
+*.lst
+*.map
+*.iex
+*.dep
+*.dbgconf
+*.lnp
+*.build_log.htm
