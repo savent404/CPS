@@ -1,0 +1,78 @@
+Configuration	CPS-Slaver
+STM32CubeMX 	4.18.0
+Date	03/14/2017
+MCU	STM32F103VCTx
+
+
+
+PERIPHERALS	MODES	FUNCTIONS	PINS
+ADC1	IN0	ADC1_IN0	PA0-WKUP
+ADC2	IN1	ADC2_IN1	PA1
+ADC3	IN2	ADC3_IN2	PA2
+RCC	Crystal/Ceramic Resonator	RCC_OSC_IN	OSC_IN
+RCC	Crystal/Ceramic Resonator	RCC_OSC_OUT	OSC_OUT
+SYS	Trace Asynchronous Sw	SYS_JTMS-SWDIO	PA13
+SYS	Trace Asynchronous Sw	SYS_JTCK-SWCLK	PA14
+SYS	Trace Asynchronous Sw	SYS_JTDO-TRACESWO	PB3
+SYS	TIM7	SYS_VS_tim7	VP_SYS_VS_tim7
+TIM2	Reset Mode	TIM2_VS_ControllerModeReset	VP_TIM2_VS_ControllerModeReset
+TIM2	ITR0	TIM2_VS_ClockSourceITR	VP_TIM2_VS_ClockSourceITR
+TIM2	Internal Clock	TIM2_VS_ClockSourceINT	VP_TIM2_VS_ClockSourceINT
+TIM2	PWM Generation CH1	TIM2_CH1	PA15
+USART1	Asynchronous	USART1_RX	PA10
+USART1	Asynchronous	USART1_TX	PA9
+USART2	Asynchronous	USART2_RX	PD6
+USART2	Asynchronous	USART2_TX	PD5
+
+
+
+Pin Nb	PINs	FUNCTIONs	LABELs
+2	PE3	GPIO_Input	Key
+3	PE4	GPIO_Input	IF_STA
+4	PE5	GPIO_Output	LED_Test
+12	OSC_IN	RCC_OSC_IN	
+13	OSC_OUT	RCC_OSC_OUT	
+15	PC0	GPIO_Output	ADC_X0
+16	PC1	GPIO_Output	ADC_X1
+17	PC2	GPIO_Output	ADC_X2
+23	PA0-WKUP	ADC1_IN0	Temp_ADC
+24	PA1	ADC2_IN1	I_ADC
+25	PA2	ADC3_IN2	V_ADC
+68	PA9	USART1_TX	
+69	PA10	USART1_RX	
+72	PA13	SYS_JTMS-SWDIO	
+76	PA14	SYS_JTCK-SWCLK	
+77	PA15	TIM2_CH1	
+85	PD4	GPIO_Output	AS608_EN
+86	PD5	USART2_TX	
+87	PD6	USART2_RX	
+88	PD7	GPIO_Output	AS608_WAK
+89	PB3	SYS_JTDO-TRACESWO	
+
+
+
+SOFTWARE PROJECT
+
+Project Settings : 
+Project Name : CPS-Slaver
+Project Folder : C:\Users\Saven\Desktop\CPS\CPS-Slaver
+Toolchain / IDE : MDK-ARM V5
+Firmware Package Name and Version : STM32Cube FW_F1 V1.4.0
+
+
+Code Generation Settings : 
+STM32Cube Firmware Library Package : Add necessary library files as reference in the toolchain project configuration file
+Generate peripheral initialization as a pair of '.c/.h' files per peripheral : Yes
+Backup previously generated files when re-generating : No
+Delete previously generated files when not re-generated : Yes
+Set all free pins as analog (to optimize the power consumption) : Yes
+
+
+Toolchains Settings : 
+Compiler Optimizations : Balanced Size/Speed
+
+
+
+
+
+
