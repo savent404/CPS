@@ -49,7 +49,7 @@
 #include "dma.h"
 
 /* USER CODE BEGIN 0 */
-
+#include "cmsis_os.h"
 /* USER CODE END 0 */
 
 UART_HandleTypeDef huart1;
@@ -243,7 +243,25 @@ void HAL_UART_MspDeInit(UART_HandleTypeDef* uartHandle)
 } 
 
 /* USER CODE BEGIN 1 */
+static __IO uint8_t rec_flag = 0;
+int stdin_getchar (void) {
+	uint8_t ch[1];
+	HAL_UART_Receive_IT(&huart1, ch, 1);
+	while (!rec_flag) {
+		osDelay(1);
+	} rec_flag = 0;
+	return *ch;
+}
+int stdout_putchar (int ch) {
+	HAL_UART_Transmit(&huart1, (uint8_t*)&ch, 1, 10);
+	return ch;
+}
 
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
+	if (huart->Instance == USART1) {
+		rec_flag = 1;
+	}
+}
 /* USER CODE END 1 */
 
 /**

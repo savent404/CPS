@@ -165,7 +165,10 @@ standard names. */
 /* #define xPortSysTickHandler SysTick_Handler */
 
 /* USER CODE BEGIN Defines */   	      
-/* Section where parameter definitions can be added (for instance, to override default ones in FreeRTOS.h) */
+#define configCOMMAND_INT_MAX_OUTPUT_SIZE 1024
+#define configAPPLICATION_PROVIDES_cOutputBuffer 1
+#define traceTASK_SWITCHED_IN()  extern void StartIdleMonitor(void); StartIdleMonitor()
+#define traceTASK_SWITCHED_OUT() extern void EndIdleMonitor(void); EndIdleMonitor()
 /* USER CODE END Defines */ 
 
 #endif /* FREERTOS_CONFIG_H */
